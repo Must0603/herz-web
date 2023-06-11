@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤르츠 심리상담</title>
+    <link rel="icon" type="image/x-icon" href="/public/img/common/img_favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/public/css/common.css">
+    <style>
+        main{ padding-top: 202px;}
+        main b{ display: block; width: 100%; margin-bottom: 100px; text-align: center; font-size: 28px; line-height: 28px; }
+        .bx_text{ color: #7A7A7A; line-height: 1.5; }
+        
+        @media screen and (max-width: 1024px){
+            main{ padding-top: 110px;}
+        }
+    </style>
+
+    <!-- js -->
+    <script src="/public/js/jquery-3.6.1.min.js"></script>
+    <script src="/public/js/privacy.js"></script>
+    <script src="/public/js/common.js"></script>
+    <script>
+        $(function(){
+            $('.bx_text').html(privacy)
+        })
+    </script>
+</head>
+<body id="page_privacy">
+    <header></header>
+    <main class="maxWidth">
+        <b>개인정보 취급방침</b>
+        <div class="bx_text"></div>
+    </main>
+    <footer></footer>
+</body>
+</html>
