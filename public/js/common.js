@@ -2,16 +2,27 @@ window.onload = function(){
     $('body').addClass('loaded')
 }
 
+window.onresize = function(){
+    if($('header .btn_panel').is('.active')){
+        $('html, body, header .btn_panel').removeClass('active')
+    }
+}
+
 //====================
 $(function(){
     if($('header').length > 0){
         $('header').load('/includes/user.header.html', function(){
-            if(window.innerWidth < 1025){
-                $('.gnb li > p').click(function(e){
-                    e.preventDefault();
-      
-                    $(this).parents('li').toggleClass('active').siblings().removeClass('active')
+            if(window.innerWidth >= 1025){
+                $('.gnb li').hover(function(){
+
+                }, function(){
+                    $(this).removeClass('active')
                 })
+            //     $('.gnb li > p').click(function(e){
+            //         e.preventDefault();
+      
+            //         $(this).parents('li').toggleClass('active').siblings().removeClass('active')
+            //     })
             }
         })
     }
@@ -24,6 +35,10 @@ $(function(){
 //--- btn common
 function btn_panel(){
     $('html, body, header .btn_panel').toggleClass('active')
+}
+
+function btn_lnb(obj){
+    $(obj).parents('li').toggleClass('active').siblings().removeClass('active')
 }
 
 //====================

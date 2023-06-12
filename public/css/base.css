@@ -161,7 +161,7 @@ body *::-webkit-scrollbar-track{ border-radius: 4px; background: #eee; box-shado
 @media screen and (max-width: 1024px){
     *{ font-size: 14px; }
 
-    html, body{ zoom: 1;}
+    html, body{ zoom: 1; width: 100vw; overflow-x: hidden;}
     main{ min-height: calc(100vh - 252px);}
     .pc{ display: none !important;}
     .mobile{ display: inline-block;}
