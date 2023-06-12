@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>헤르츠 심리상담</title>
     <link rel="icon" type="image/x-icon" href="/public/img/common/img_favicon.png">
 
@@ -61,7 +61,11 @@
                 let input_selectedcenter = $('#input_selectedcenter').val(input_center)
                 $('#form_email').submit()
                 alert('상담문의가 정상적으로 신청되었습니다')
-                location.reload()
+
+                setTimeout(() => {
+                    location.reload()
+                }, 200);
+             
             }
         }
     </script>
@@ -93,28 +97,34 @@
             </div>
         </section><hr>
 
-        <section class="sec_2 maxWidth wrap_col">
-            <h4 class="col_12">전문 상담 클리닉</h4>
-            <a href="./counselling.html?0" class="col_3">
+        <section class="sec_2 maxWidth">
+            <h4>전문 상담 클리닉</h4>
+            <a href="./counselling.html?0">
                 <img src="/public/img/sub/main_sec2_img_1.png" alt="">
                 아동 상담
                 <p>발달장애, 분리불안,<br>언어문제, 학교부적응 등</p>
                 <span class="link_viewMore">자세히보기</span>
             </a>
-            <a href="./counselling.html?1" class="col_3">
+            <a href="./counselling.html?1">
                 <img src="/public/img/sub/main_sec2_img_2.png" alt="">
                 청소년 상담
                 <p>우울/불안, 스마트폰 중독,<br>게임 중독, 도박 중독</p>
                 <span class="link_viewMore">자세히보기</span>
             </a>
-            <a href="./counselling.html?2" class="col_3">
+            <a href="./counselling.html?2">
                 <img src="/public/img/sub/main_sec2_img_3.png" alt="">
                 성인 상담
-                <p>우울/불안, 직장스트레스,<br>도박중독, 대학생 학습증진, 노인치매</p>
+                <p>우울/불안, 직장스트레스,<br>도박중독, 대학생 학습증진</p>
                 <span class="link_viewMore">자세히보기</span>
             </a>
-            <a href="./counselling.html?4" class="col_3">
+            <a href="./counselling.html?3">
                 <img src="/public/img/sub/main_sec2_img_4.png" alt="">
+                노인 상담
+                <p>우울/불안, 고독, 치매 등<br>&nbsp;</p>
+                <span class="link_viewMore">자세히보기</span>
+            </a>
+            <a href="./counselling.html?4">
+                <img src="/public/img/sub/main_sec2_img_5.png" alt="">
                 가족 상담
                 <p>성격차이, 가족폭력,<br>커플 및 부부 갈등</p>
                 <span class="link_viewMore">자세히보기</span>
@@ -187,7 +197,7 @@
                 marker.setMap(map);
                 setTimeout(function(){ map.relayout(); }, 200);
             </script>
-            <form id="form_email" class="col_7" method="post" data-email="herzcs.info@gmail.com" target="iframe1" action="https://script.google.com/macros/s/AKfycbxrTKVj9lJOr9HPWtljbDSvon6IxznpNfZmq2NSlLWWtyeRCZ3SIisK5U2eASFOQ199TQ/exec">
+            <form id="form_email" class="col_7" method="post" data-email="herzcs.info@gmail.com" target="iframe1" action="//script.google.com/macros/s/AKfycbxrTKVj9lJOr9HPWtljbDSvon6IxznpNfZmq2NSlLWWtyeRCZ3SIisK5U2eASFOQ199TQ/exec">
                 <span>* 표시는 필수 입력</span>
                 <table>
                     <tr>

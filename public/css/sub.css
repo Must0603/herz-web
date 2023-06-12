@@ -25,14 +25,15 @@
 #page_index .sec_1 hr{ max-width: 180px; height: 5px; border: none; background: #F2F2F2;border-radius: 5px; }
 
 /* --- sec_2 */
-#page_index .sec_2 h4{ color: #222; }
+#page_index .sec_2.maxWidth{ display: flex; flex-flow: row wrap;  justify-content: center; gap: 22px 24px; max-width: 1654px; }
+#page_index .sec_2 h4{ width: 100%; color: #222; }
 
 /* col_3 */
-#page_index .sec_2 .col_3{
+#page_index .sec_2 a{
     position: relative;
     display: flex; flex-flow: column nowrap; align-items: center; 
     justify-content: flex-end;
-    aspect-ratio: 1/1.36;
+    max-width: 314px; aspect-ratio: 1/1.36;
     background: #fff no-repeat;
     border: 1px solid #C2C2C2; border-radius: 20px; 
     transition: all 0.1s ease-out;
@@ -40,14 +41,14 @@
     color: var(--primary); font-weight: 500; font-size: 24px; 
     font-family: 'Noto Sans KR';  line-height: 35px;
 }
-#page_index .sec_2 .col_3 img{ width: 100%; margin: auto;}
+#page_index .sec_2 a img{ width: 100%; margin: auto;}
 
-#page_index .sec_2 .col_3 p{ margin-top: 8px; color: #6A6A6A; text-align: center; line-height: 150%;}
-#page_index .sec_2 .col_3 .link_viewMore{ margin-top: 10px; font-family: inherit;}
+#page_index .sec_2 a p{ margin-top: 8px; color: #6A6A6A; text-align: center; line-height: 150%;}
+#page_index .sec_2 a .link_viewMore{ margin-top: 10px; font-family: inherit;}
 
-#page_index .sec_2 .col_3:hover{ border-color: var(--primary);}
-#page_index .sec_2 .col_3:hover .link_viewMore{ color: var(--primary);}
-#page_index .sec_2 .col_3:hover .link_viewMore:before{
+#page_index .sec_2 a:hover{ border-color: var(--primary);}
+#page_index .sec_2 a:hover .link_viewMore{ color: var(--primary);}
+#page_index .sec_2 a:hover .link_viewMore:before{
     background-image: url("data:image/svg+xml,%3Csvg width='73' height='9' viewBox='0 0 73 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8.5H71.5L64 1' stroke='%23012B83'/%3E%3C/svg%3E%0A");
 }
 
@@ -117,21 +118,43 @@
 
 /**************************************************/
 /* ====================================== 1. procedure */
-/* === page_procedure === */
-#page_procedure h4{ line-height: 163.5%; font-weight: 700; }
-#page_procedure h5{ line-height: 163.5%; color: #777; }
 #page_procedure .t_guide{ display: block; color: #767676; font-size: 15px; line-height: 24px; text-align: center;  }
-#page_procedure .wrap_procedure .t_list:before{ 
+
+#page_procedure .bx_step{ display: flex; flex-flow: row wrap;}
+#page_procedure .bx_step li{ position: relative;}
+#page_procedure .bx_step li:before{ 
+    position: absolute; bottom: 0;
+    display: inline-block; 
+   height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='7' height='16' viewBox='0 0 7 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 7.5L0 0V15.5L7 7.5Z' fill='%23777777'/%3E%3C/svg%3E%0A") no-repeat center;
+    content: '';
+}
+#page_procedure .bx_step li:first-of-type:before{ display: none;}
+
+#page_procedure .bx_step .bx_icon{
+    width: 100%; aspect-ratio: 1/1; 
+    background: #F4F4F4; border: 1px solid #E2E2E2; border-radius: 50%;
+}
+#page_procedure .bx_step .bx_icon img{ width: 100%; height: 100%;}
+#page_procedure .bx_step p{ text-align: center; color: #4A4A4A;
+line-height: 163.5%; font-weight: 400; }
+
+/* ====================================== 2. program */
+/* === page_program === */
+#page_program h4{ line-height: 163.5%; font-weight: 700; }
+#page_program h5{ line-height: 163.5%; color: #777; }
+#page_program .t_guide{ display: block; color: #767676; font-size: 15px; line-height: 24px; text-align: center;  }
+#page_program .wrap_procedure .t_list:before{ 
     width: auto; height: auto; border: none; 
     content: attr(data-value)
 }
 
 /**************************************************/
-/* ====================================== 2. evaluation */
+/* ====================================== 3. evaluation */
 #page_evaluation .t_guide{ margin-top: 20px; line-height: 200%; color: #424242;}  
 
 /**************************************************/
-/* ====================================== 3. counselling */
+/* ====================================== 4. counselling */
 /* wrap_contents */
 #page_counselling .wrap_contents[data-index="0"] p{ margin: 0;}
 
@@ -154,7 +177,7 @@
 
 
 /**************************************************/
-/* ====================================== 4. introduction */
+/* ====================================== 5. introduction */
 #page_introduction ul.maxWidth{ display: flex; flex-flow: row wrap; max-width: 1160px;}
 #page_introduction ul.maxWidth img{ border: 1px solid #CFCFCF; border-radius: 10px; }
 #page_introduction ul.maxWidth li{ display: flex; flex-flow: row wrap; }
@@ -189,12 +212,12 @@
     #page_index .sec_1 span{ font-size: 18px; }
 
     /* --- sec_2 */
-    #page_index .sec_2{ justify-content: space-between; padding: 124px 0 170px;}
-    #page_index .sec_2 h4{ margin-bottom: 60px; }
+    #page_index .sec_2{ justify-content: space-between; padding: 124px 0 170px; }
+    #page_index .sec_2 h4{ margin-bottom: 58px; }
 
-    #page_index .sec_2 .col_3{ padding-bottom: 55px; }
-    #page_index .sec_2 .col_3 img{ max-width: 240px;}
-    #page_index .sec_2 .col_3 p{ font-size: 14px; }
+    #page_index .sec_2 a{ width: calc(20% - 19.2px); padding-bottom: 55px; }
+    #page_index .sec_2 a img{ max-width: 240px;}
+    #page_index .sec_2 a p{ font-size: 14px; }
 
     /* --- sec_3 */
     #page_index .sec_3{ padding: 120px 0 106px;}
@@ -228,16 +251,27 @@
     #page_index .sec_4 .col_12 .link_reserve{ margin: 58px auto 0;}
 
     /* ============================== 1. procedure */
-    /* === page_procedure === */
-    #page_procedure h4{ margin-bottom: 15px; font-size: 18px; }
-    #page_procedure h5{ margin-bottom: 32px; font-size: 15px; }
     #page_procedure .t_guide{ margin: 30px auto 65px;}
-    #page_procedure .wrap_contents[data-index="0"] p{ min-height: 128px; }
 
-    /* ============================== 2. evaluation */   
+    #page_procedure .bx_step{ gap: 0 40px; margin: 40px 0 80px;}
+    #page_procedure .bx_step li{ width: calc(16.66% - 33.33px); }
+    #page_procedure .bx_step li:before{ left: -40px; width: 40px;  }
+    #page_procedure .bx_step .bx_icon{ margin-bottom: 23px;}
+
+    #page_procedure .bx_step p{ font-size: 15px;}
 
 
-    /* ============================== 3. counselling */   
+    /* ============================== 2. program */
+    /* === page_program === */
+    #page_program h4{ margin-bottom: 15px; font-size: 18px; }
+    #page_program h5{ margin-bottom: 32px; font-size: 15px; }
+    #page_program .t_guide{ margin: 30px auto 65px;}
+    #page_program .wrap_contents[data-index="0"] p{ min-height: 128px; }
+
+    /* ============================== 3. evaluation */   
+
+
+    /* ============================== 4. counselling */   
     /* === page_counselling === */
     #page_counselling main{ min-height: 130vh !important;}
     #page_counselling .wrap_contents[data-index="0"]{ padding: 34px 48px;}
@@ -246,7 +280,7 @@
     /* bx_2 */
     #page_counselling .bx_2{ margin-top: 60px;}
 
-    /* ============================== 4. introduction */ 
+    /* ============================== 5. introduction */ 
     /* === page_introduction === */
     #page_introduction ul.maxWidth{ margin-top: 50px; gap: 50px 0;}
     #page_introduction ul.maxWidth li{ width: 50%;}
@@ -256,8 +290,9 @@
     #page_introduction ul.maxWidth div{ width: calc(100% - 192px); padding: 12px 26px; font-size: 14px;}
 
 }
-@media screen and (max-width: 1680px){
+@media screen and (max-width: 1240px){
 
+    #page_index .sec_2 a{ width: calc(33.33% - 19.2px);}
 }
 @media screen and (max-width: 1024px){
     /* ============================== 0. main */
@@ -282,8 +317,8 @@
     /* --- sec_2 */
     #page_index .sec_2 { gap: 22px 10px; padding: 96px 0 62px;}
     #page_index .sec_2 h4{ margin-bottom: 62px;}
-    #page_index .sec_2 .col_3{ width: calc(25% - 7.5px); padding: 40px 10px; }
-    #page_index .sec_2 .col_3 p{ font-size: 12px; }
+    #page_index .sec_2 a{ padding: 40px 10px; }
+    #page_index .sec_2 a p{ font-size: 12px; }
 
     /* --- sec_3 */
     #page_index .sec_3{ justify-content: space-between; padding: 80px 0 118px;}
@@ -319,17 +354,27 @@
     #page_index .sec_4 .col_12 .lb_chk{ padding: 20px 0;}
     #page_index .sec_4 .col_12 .link_reserve{ margin: 40px auto 0;}
 
-    /* ============================== 1. procedure */ 
+    /* ============================== 1. procedure */
     /* === page_procedure === */
-    #page_procedure h4{ margin-bottom: 12px; font-size: 1.07rem; text-align: center; }
-    #page_procedure h5{ margin-bottom: 20px; font-size: 0.92rem; text-align: center;  }
     #page_procedure .t_guide{ margin: 20px auto 50px;}
+    
+    #page_procedure .bx_step{ gap: 50px 40px; padding: 0 16px; margin: 60px 0 50px;}
+    #page_procedure .bx_step li{ width: calc(33.33% - 26.66px); }
+    #page_procedure .bx_step li:before{ left: -40px; width: 40px;  }
+    #page_procedure .bx_step .bx_icon{ max-width: 200px; margin: 0 auto 13px;}
 
-    /* ============================== 2. evaluation */ 
+    #page_procedure .bx_step p{ font-size: 1.07rem;}
+
+    /* ============================== 2. program */ 
+    /* === page_program === */
+    #page_program h4{ margin-bottom: 12px; font-size: 1.07rem; text-align: center; }
+    #page_program h5{ margin-bottom: 20px; font-size: 0.92rem; text-align: center;  }
+    #page_program .t_guide{ margin: 20px auto 50px;}
+
+    /* ============================== 3. evaluation */ 
 
 
-
-    /* ============================== 3. counselling */   
+    /* ============================== 4. counselling */   
     /* wrap_contents */
     #page_counselling .wrap_contents[data-index="0"]{ padding: 12px 24px;}
     #page_counselling .wrap_contents[data-index="0"] p{ padding: 16px 0;}
@@ -338,7 +383,7 @@
     #page_counselling .bx_2{ margin-top: 24px;}
     #page_counselling .bx_2 li{ line-height: 150%;}
 
-    /* ============================== 4. introduction */   
+    /* ============================== 5. introduction */   
     /* === page_introduction === */
     #page_introduction ul.maxWidth{ margin-top: 36px; gap: 50px 0;}
     #page_introduction ul.maxWidth li{ align-content: flex-start; width: 25%; padding: 0 10px;}
@@ -352,7 +397,7 @@
 @media screen and (max-width: 980px){
     /* === page_index === */
     /* --- sec_2 */
-    #page_index .sec_2 .col_3{ width: calc(50% - 10px); }
+    #page_index .sec_2 a{ width: calc(50% - 12px); }
 
     /* --- sec_3 */
     #page_index .sec_3 .col_4{ width: calc(50% - 10px); }
@@ -371,10 +416,23 @@
 @media screen and (max-width: 560px){
     /* === page_index === */
     /* --- sec_2 */
-    #page_index .sec_2 .col_3{ width: 100%;}
+    #page_index .sec_2 a{ width: 100%;}
 
     /* --- sec_4 */
     #page_index .sec_4 .col_7 .wrap_td *[id*="input_phone"]{ flex: 1 1 80px; width: unset; } 
+
+    /* page_procedure */
+    #page_procedure .bx_step{ gap: 50px 17px; margin-bottom: calc(50px + 6em); }
+    #page_procedure .bx_step li{ width: calc(50% - 17px);}
+    #page_procedure .bx_step li::before{ top: -45px; bottom: unset; left: calc(50% - 20px); height: 40px; transform: rotate(90deg);}
+    #page_procedure .bx_step li:nth-of-type(1){ order: 1;}
+    #page_procedure .bx_step li:nth-of-type(4){ order: 2; }
+    #page_procedure .bx_step li:nth-of-type(2){ order: 3;}
+    #page_procedure .bx_step li:nth-of-type(5){ order: 4;}
+    #page_procedure .bx_step li:nth-of-type(3){ order: 5;}
+    #page_procedure .bx_step li:nth-of-type(6){ order: 6;}
+
+    #page_procedure .bx_step li:nth-of-type(n+4){ top: 6em; }
 
     /* === page_introduction === */
     #page_introduction ul.maxWidth li{ width: 100%;}

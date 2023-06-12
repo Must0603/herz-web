@@ -14,7 +14,7 @@ header .maxWidth{ display: flex; align-items: center; }
 header .gnb{ display: flex; flex-flow: row wrap;}
 header .gnb li > *:is(p, a){ 
     display: flex; align-items: center; 
-    width: 100%; 
+    width: 100%; font-weight: 400; 
 }
 header .gnb li > p{ cursor: default;}
 
@@ -40,8 +40,11 @@ footer .fTop i{ display: inline-block; width: 2px; height: 12px; margin: 0 12px;
 footer .fBottom{ min-height: 140px; border-top: 1px solid rgba(255, 255, 255, 0.3); }
 footer .fBottom .maxWidth{ display: flex; align-items: center;}
 footer .link_index img{ width: 100%;}
-footer .fBottom p{color: #fff;  line-height: 120%; font-weight: 300; }
-
+footer .fBottom .maxWidth div{ display: flex; flex-flow: row wrap; align-items: center; }
+footer .fBottom p{ color: #fff; line-height: 160%;font-weight: 300; }
+footer .fBottom p:before{ content: attr(title); color: rgba(255, 255, 255, 0.6);}
+footer .fBottom u{ display: block; width: 100%; height: 12px;}
+footer .fBottom i{ display: block; width: 2px; height: 12px; background: rgba(255, 255, 255, 0.7);}
 
 /**************************************************/
 /* === main === */
@@ -102,13 +105,14 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     header .wrap_panel{  flex: 1; display: flex; align-items: center; }
 
     /* gnb */
-    header .gnb{  flex: 1; max-width: 588px; margin: auto; }
+    header .gnb{  flex: 1; max-width: 740px; margin: auto; }
     header .gnb li{ position: relative; flex: 1; }
     header .gnb li > *:is(p, a){ 
         justify-content: center; height: 80px; 
-        font-weight: 700; text-align: center; color: #7A7A7A; font-size: 18px; 
+        text-align: center; color: #7A7A7A; transition: 0.15s ease-out;
     }
-    header .gnb li:hover > *:is(p, a){ color: var(--primary);}
+    header .gnb li:hover > *:is(p, a),
+    header .gnb li.active > *:is(p, a){ color: var(--primary); font-weight: 600;}
 
     /* lnb */
     header .lnb{ 
@@ -130,12 +134,16 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     header .lnb a:hover{ font-weight: 700; color: #646464; }
 
     /* bx_links */
+    header .bx_links > *{ display: flex; align-items: center;}
+    header .bx_links > *:after{ margin-left: 6px; content: attr(data-value); font-size: 15px;  font-weight: 400;}
     header .link_kakao{ margin-left: 24px;}
 
     /* === footer === */
     footer .link_index{ width: 230px;}
     footer .fBottom{ padding: 44px 0 40px;  }
-    footer .fBottom p{ width: calc(100% - 230px); padding-left: 70px; font-size: 14px; }
+    footer .fBottom .maxWidth div{ width: calc(100% - 230px); max-width: 885px; padding-left: 20px; margin-left: auto;}
+    footer .fBottom p{ font-size: 14px; }
+    footer .fBottom i{ margin: 0 20px 0 24px;}
 
     /* === main === */
     main{ margin-top: 80px; }
@@ -154,8 +162,9 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     main .bn b{ font-size: 42px; line-height: 42px;}
     main .bn span{ font-size: 22px;}
 }
-@media screen and (max-width: 1680px){
-
+@media screen and (max-width: 1440px){
+    footer .link_index{ width: 180px;}
+    footer .fBottom .maxWidth div{ width: calc(100% - 180px); }
 }
 @media screen and (max-width: 1024px){
     /* === header === */
@@ -221,7 +230,7 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     header .gnb{ max-height: calc(100% - 56px); overflow-y: auto; border-top: 1px solid rgba(255, 255, 255, 0.2);}
     header .gnb li{ width: 100%;}
     header .gnb li *{ border-bottom: 1px solid rgba(255, 255, 255, 0.2);  }
-    header .gnb li > *:is(p, a){ height: 56px; padding-left: 20px; font-size: 15px; cursor: pointer;}
+    header .gnb li > *:is(p, a){ height: 56px; padding-left: 20px; font-size: 15px;}
     header .gnb li > *:is(p, a):hover, 
     header .gnb li.active > *:is(p, a){ background: #fff; color: var(--primary); }
 
@@ -256,7 +265,9 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     footer .fBottom { padding: 20px 0 55px;}
     footer .fBottom .maxWidth{ flex-flow: column nowrap;}
     footer .link_index{ width: 200px; margin-bottom: 52px;}
-    footer .fBottom p{ width: 100%; font-size: 12px; text-align: center; }
+    footer .fBottom .maxWidth div{ justify-content: center; width: 100%; }
+    footer .fBottom p{ font-size: 0.92rem; text-align: center;}
+    footer .fBottom i{ margin: 0 30px 0 24px;}
 
     /* === main === */
     main{  margin-top: 60px !important;  }
