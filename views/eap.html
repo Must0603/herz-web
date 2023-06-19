@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>헤르츠 심리상담</title>
+    <link rel="icon" type="image/x-icon" href="/public/img/common/img_favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/public/css/sub.css">
+
+    <!-- js -->
+    <script src="/public/js/jquery-3.6.1.min.js"></script>
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/privacy.js"></script>
+    <script>
+        $(function(){
+            $('.sec_3 .bx_scroll_Y').html(privacy)
+        })
+
+        //===========
+        function sel_emailList(val){
+            if(val == ''){
+                $('#input_email2').val('').attr('readonly', false)
+            }
+            else{
+                $('#input_email2').val(val).attr('readonly', true)
+            }
+        }
+
+        function btn_write(){
+            let input_company = $('#input_company').val().trim();
+            let input_name = $('#input_name').val().trim()
+            let input_phone0 = $('#input_phone0').val()
+            let input_phone1 = $('#input_phone1').val().trim()
+            let input_phone2 = $('#input_phone2').val().trim()
+            let input_email1 = $('#input_email1').val().trim()
+            let input_email2 = $('#input_email2').val().trim()
+            let input_title = $('#input_title').val().trim()
+            let input_contents = $('#input_contents').val().trim()
+
+            if(input_name == ''){
+                alert('회사(기관)을 입력해주세요')
+                $('#input_company').focus()
+            }
+            else if(input_name == ''){
+                alert('담당자 이름을 입력해주세요')
+                $('#input_name').focus()
+            }
+            else if(input_phone1 == ''){
+                alert('전화번호를 입력해주세요')
+                $('#input_phone1').focus()
+            }
+            else if(input_phone2 == ''){
+                alert('전화번호를 입력해주세요')
+                $('#input_phone2').focus()  
+            } 
+            else if(input_email1 == ''){
+                alert('이메일를 입력해주세요')
+                $('#input_email1').focus()
+            }
+            else if(input_email2 == ''){
+                alert('이메일를 입력해주세요')
+                $('#input_email2').focus()  
+            } 
+            else if(input_title == ''){
+                alert('제목을 입력해주세요')
+                $('#input_title').focus()  
+            } 
+            else if(input_contents == ''){
+                alert('내용을 입력해주세요')
+                $('#input_contents').focus()  
+            } 
+            else if(!input_policy){
+                alert('개인정보 수집 및 이용 동의를 확인해주세요')
+                $('#input_policy').focus()
+            }
+            else{
+                let input_phone = input_phone0 + '-' + input_phone1 + '-' + input_phone2;
+                let input_email = input_email1 + '@' + input_email2;
+
+                $('#input_phone').val(input_phone)
+                $('#input_email').val(input_email)
+
+                $('#form_email').submit()
+                alert('상담문의가 정상적으로 신청되었습니다')
+
+                setTimeout(() => {
+                    location.reload()
+                }, 200);
+            }
+        }
+    </script>
+</head>
+<body id="page_eap">
+    <header></header>
+    <main>
+        <div class="bn">
+            <b class="maxWidth">EAP</b>
+            <span>EAP 소개/문의</span>
+            <img src="/public/img/sub/eap_img_bn.png" alt="" class="pc">
+            <img src="/public/img/sub/eap_img_bn_mobile.png" alt="" class="mobile">
+        </div>
+
+        <section class="sec_1 maxWidth2">
+            <h2 class="t_list">EAP</h2>
+
+            <b class="t_primary">EAP (근로자 지원 프로그램)</b>
+            <p>
+                기업의 생산성에 영향을 미치는 요인에 대해 상담, 코칭, 서비스 연계 등의 기술을 활용하여 근본적인 해결 방안을 종합적으로 지원하는 <br class="pc">기업 복리후생 제도를 말합니다.<br><br>
+                기업에는 조직문화 향상, 인력 이탈 예방, 생산성 향상을 위한 바탕이 되며, 근로자에게는 심리적 안정과 업무 대처능력 향상, <br class="pc">감정 조절 능력 등이 좋아질 수 있습니다.
+            </p>
+
+            <ul>
+                <li><img src="/public/img/sub/eap_sec1_step1.png" alt="">
+                    <strong>1차 심리평가</strong>
+                    <p>(스트레스, 우울, 불안 등의 <br>자가보고형 검사) </p>
+                </li>
+                <li><img src="/public/img/sub/eap_sec1_step2.png" alt="">
+                    <strong>2차 심리평가</strong>
+                    <p>(종합심리평가, <br class="pc">성격 및 정서 검사, <br class="mobile">지능검사 등의 <br class="pc">심층 검사 실시 및 해석)</p>
+                </li>
+                <li><img src="/public/img/sub/eap_sec1_step3.png" alt="">
+                    <strong>3차 심리상담</strong>
+                    <p>(1, 2차 심리평가 결과를 바탕으로 <br>오프라인 대면 상담 실시: <br><u>헤르츠 잠실점</u> 활용)</p>
+                </li>
+            </ul>
+
+            <span>* 내담자 상황에 따라 5회~12회기 상담 가능</span>
+        </section>
+
+        <section class="sec_2">
+            <div class="maxWidth2">
+                <b>상담 내용</b>
+
+                <ul>
+                    <li title="우울/불안">
+                        직장 생활하면서 겪는 정서적 어려움,<br class="mobile"> 자존감 및 자아 문제,<br class="pc">
+                        감정 조절 문제 등을 <br class="mobile">다루고 이를 극복할 수 있는 방법을 전문가와 <br>함께 고민합니다.
+                        <img src="/public/img/sub/eap_sec2_card1.png" alt="">
+                    </li>
+                    <li title="불면증">
+                        불면증의 가능한 원인과 회사 업무, 직원 관계<br class="mobile"> 등의 연결고리를<br class="pc">
+                        함께 고민하고 건강한 연결<br class="mobile">을 찾도록 격려합니다.
+                        <img src="/public/img/sub/eap_sec2_card2.png" alt="">
+                    </li>
+                    <li title="스트레스 관리 및 회복 탄력성">
+                        스트레스가 많은 어려운 상황에서 회복할 수 <br class="mobile">있는 능력을 키우고<br class="pc">
+                        7가지 요인을 확인합니다.
+                        <span>1) 긍정성 2) 유연성 3) 끈기 4) 가치 5) 자기 돌봄 <br class="mobile">6) 자기조절 7) 대인관계</span>
+                        <img src="/public/img/sub/eap_sec2_card3.png" alt="">
+    
+                    </li>
+                    <li title="중독">
+                        직장 생활과 관련된 흡연, 주식/코인, 도박, <br class="mobile">알코올 등의<br class="pc"> 
+                        중독 문제를 다루고 중독에서 회복<br class="mobile">하기 위한 조건들을<br class="pc">
+                        인식하고 행동하도록 <br class="mobile">격려합니다.
+                        <span>
+                            * 행위중독 : 쇼핑, 성, 도박, 일 등<br>
+                            * 물질 중독 : 니코틴, 카페인, 알코올, 마약 등
+                        </span>
+                        <img src="/public/img/sub/eap_sec2_card4.png" alt="">
+                    </li>
+                    <li title="마음 챙김">
+                        구체적 명상의 방법을 일컫는 용어로써 <br class="mobile">Mindfulness에 대응하는 개념입니다. 마음 챙<br class="mobile">김의 목적은<br class="pc">
+                        대상을 제거하는 것이 아니라 대상<br class="mobile">을 알아차리는 것을 의미합니다. 마음 챙김의 <br class="mobile">핵심은 주의를<br class="pc">
+                        기울이는 것이며, 단순한 주의력<br class="mobile">이 아닌 특별한 태도, 즉 판단하지 않음, 인내, <br class="mobile">초심, 신뢰, 수용,<br class="pc">
+                        내려놓음, 감사함, 관대함이<br class="mobile">라는 태도를 가지고 주의를 기울이는 것에서 생<br class="mobile">겨나는 자각을 말합니다.
+                        <img src="/public/img/sub/eap_sec2_card5.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sec_3 maxWidth2">
+            <b>기업 EAP 상담 문의</b>
+            <span>* 표시는 필수 입력</span>
+            <form id="form_email" method="post" data-email="herzcs.info@gmail.com" target="iframe1" action="//script.google.com/macros/s/AKfycby-BmmrXYNuc8q64AdoRWl8zAFMCxJ6T03LdmOi2ycdMUpt5HgYvcqqSEoM2-XPSTFw0Q/exec">
+                <table class="tb_form">
+                    <tr><th>*회사(기관)</th>
+                        <td>
+                           <input type="text" name="input_company" id="input_company" placeholder="회사를 입력해주세요.">
+                        </td>
+                    </tr>
+                    <tr><th>*담당자</th>
+                        <td>
+                           <input type="text" name="input_name" id="input_name" placeholder="이름을 입력해주세요.">
+                        </td>
+                    </tr>
+                    <tr><th>*연락처</th>
+                        <td>
+                            <div class="wrap_td wrap_phone">
+                                <select id="input_phone0">
+                                    <option value="010" selected="">010</option>
+                                    <option value="011">011</option>
+                                    <option value="012">012</option>
+                                    <option value="013">013</option>
+                                    <option value="015">015</option>
+                                    <option value="016">016</option>
+                                    <option value="017">017</option>
+                                    <option value="018">018</option>
+                                    <option value="019">019</option>
+                                </select><i></i>
+                                <input type="number" id="input_phone1" oninput="maxLeng(this, 4)"><i></i>
+                                <input type="number" id="input_phone2" oninput="maxLeng(this, 4)">
+                                <input type="hidden" id="input_phone" name="input_phone">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr><th>*이메일</th>
+                        <td> 
+                            <div class="wrap_td wrap_email">
+                                <input type="text" id="input_email1" placeholder="Herz1234">&ensp;@&ensp;
+                                <input type="text" id="input_email2" placeholder="naver.com">&ensp;
+                                <select id="sel_email" onchange="sel_emailList(this.value)">
+                                    <option value="" selected>직접입력</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                </select>
+                                <input type="hidden" name="input_email" id="input_email">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr><th>*제목</th>
+                        <td>
+                           <input type="text" name="input_title" id="input_title" placeholder="제목을 입력해주세요">
+                        </td>
+                    </tr>
+                    <tr><th>*내용</th>
+                        <td>
+                           <textarea name="input_contents" id="input_contents" cols="30" rows="10" placeholder="문의 내용을 입력해주세요."></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </form><iframe id="iframe1" name="iframe1" style="display:none"></iframe>
+            <strong>개인정보 수집 및 이용 동의</strong>
+            <div class="bx_scroll_Y"></div>
+            <label class="lb_chk" tabindex="0" onkeypress="triggerClick(this)"><input type="checkbox" name="" id="input_policy" tabindex="-1">개인정보 수집 및 이용에 동의합니다.</label>
+
+            <button type="button" class="btn_write" onclick="btn_write()">작성완료</button>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
