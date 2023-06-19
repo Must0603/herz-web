@@ -57,8 +57,11 @@
                 $('#input_policy').focus()
             }
             else{
-                let input_phone = $('#input_phone').val(input_phone0 + '-' + input_phone1 + '-' + input_phone2)
-                let input_selectedcenter = $('#input_selectedcenter').val(input_center)
+                let input_phone = input_phone0 + '-' + input_phone1 + '-' + input_phone2;
+
+                $('#input_phone').val(input_phone)
+                $('#input_selectedcenter').val(input_center)
+
                 $('#form_email').submit()
                 alert('상담문의가 정상적으로 신청되었습니다')
 
@@ -88,11 +91,12 @@
                 <hr>
                 <span>
                     헤르츠(herz)는 독일어로 마음, 용기, 영혼, 심장이라는 뜻입니다.<br>
-                    헤르츠심리상담센터는 2023년 5월에 롯데마트 제타플랙스점에 개소하였습니다.<br>
-                    우리센터는 심리학 석,박사 학위를 지닌 전문가 집단으로 상담심리사1급, 발달심리사1급,<br>
-                    임상심리전문가,  중독심리전문가 등의 한국심리학회 공인 자격과 정신건강임상심리사 1급,<br> 언어재활사1급, 청소년상담사 1급 등의 국가 자격을 보유한 전문가로 구성되어 있습니다.<br>
+                    헤르츠심리상담센터는 2023년 5월에 롯데마트 제타플렉스점에 개소하였습니다. <br>
+                    우리센터는 심리학 석,박사 학위를 지닌 전문가 집단으로 상담심리사1급, 발달심리사1급, 인지학습심리사 1급,
+                    임상심리전문가,  중독심리전문가 등의 한국심리학회 공인 자격과 정신건강임상심리사 1급, 언어재활사1급,
+                    청소년상담사 1급 등의 국가 자격을 보유한 전문가로 구성되어 있습니다. <br>
                     당신의 용기에 박수를 보내며 심리적인 도움을 드리도록 최선의 노력을 다하겠습니다.<br><br>
-                    - 센터장 최경수 올림
+                    센터장 최경수 올림
                 </span>
             </div>
         </section><hr>
@@ -141,8 +145,8 @@
                     ∙ 가톨릭 대학교 상담 및 임상심리학 석사<br>
                     ∙ 용인정신병원 임상심리과 <br>
                     ∙ 서울올림픽기념 국민체육진흥공단<br> 
-                    ∙ 한국도박문제예방치유원 정신건강임상심리사 1급<br>
-                    ∙ 중독심리전문가
+                    ∙ 한국도박문제예방치유원<br>
+                    ∙ 정신건강임상심리사 1급, 중독심리전문가
                 </span>
             </div>
             <div class="col_4">
@@ -151,7 +155,8 @@
                 <b>한소희</b>
                 <span>
                     ∙ 이화여대 심리학사, 이화여대 대학원 심리학 석사<br>  
-                    ∙ 일산백병원 발달증진클리닉, 인간발달복지연구소, 아이코리아 아동발달교육연구원 <br>
+                    ∙ 일산백병원 발달증진클리닉, 인간발달복지연구소, <br> 
+                    ∙ 아이코리아 아동발달교육연구원 <br>
                     ∙ 파랑새 아동청소년 연구소<br> 
                     ∙ 발달심리사 1급
                 </span>
@@ -197,9 +202,9 @@
                 marker.setMap(map);
                 setTimeout(function(){ map.relayout(); }, 200);
             </script>
-            <form id="form_email" class="col_7" method="post" data-email="herzcs.info@gmail.com" target="iframe1" action="//script.google.com/macros/s/AKfycbxrTKVj9lJOr9HPWtljbDSvon6IxznpNfZmq2NSlLWWtyeRCZ3SIisK5U2eASFOQ199TQ/exec">
+            <form id="form_email" class="col_7" method="post" data-email="herzcs.info@gmail.com" target="iframe1" action="//script.google.com/macros/s/AKfycbzfZwCUmELjmmMYiZwwPs_ymwfUDKWKizBHh8o9YawU2uElPuja8PIWP5yMXtvIfsRZOg/exec">
                 <span>* 표시는 필수 입력</span>
-                <table>
+                <table class="tb_form">
                     <tr>
                         <th>*이름</th>
                         <td><input type="text" id="input_name" name="input_name" placeholder="이름을 입력해주세요"></td>
@@ -230,10 +235,12 @@
                         <td>
                             <select name="input_purpose" id="input_purpose">
                                 <option value="" selected hidden>선택하세요</option>
-                                <option value="우울/불안">우울/불안</option>
-                                <option value="스트레스">스트레스</option>
-                                <option value="도박 게임 과몰입/중독">도박, 게임 과몰입/중독</option>
-                                <option value="학습증진">학습증진</option>
+                                <option value="언어/발달문제">언어/발달문제</option>
+                                <option value="인터넷/게임문제">인터넷/게임문제</option>
+                                <option value="도박문제">도박문제</option>
+                                <option value="우울/불안/스트레스">우울/불안/스트레스</option>
+                                <option value="부부갈등">부부갈등</option>
+                                <option value="기타">기타</option>
                             </select>
                         </td>
                     </tr>

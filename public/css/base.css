@@ -112,6 +112,7 @@ body *::-webkit-scrollbar-track{ border-radius: 4px; background: #eee; box-shado
 .br_secondary{ border: 1px solid var(--secondary); background: #fff; color: var(--secondary);}
 .br_point{ border: 1px solid var(--point); background: #fff; color: var(--point) !important; }
 
+.t_primary{ color: var(--primary) !important;}
 .t_secondary{ color: var(--secondary) !important; }
 .t_point{ color: var(--point)  !important; }
 

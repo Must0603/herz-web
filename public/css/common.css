@@ -66,7 +66,7 @@ main h3{ border-bottom: 1px solid #CFCFCF; font-weight: 700; text-align: center;
 /* --- wrap */
 .wrap_contents{ border: 1px solid #CFCFCF; border-radius: 10px; }
 .wrap_contents b.t_list{ line-height: 163.5%; }
-.wrap_contents p{ padding-top: 10px; border-bottom: 1px solid #E7E7E7; color: #777; line-height: 170%;}
+.wrap_contents p{ padding-top: 10px; border-bottom: 1px solid #E7E7E7; color: #777; line-height: 170%; word-break: break-all;}
 .wrap_contents p:last-of-type{ margin-bottom: 0 !important;}
 
 .wrap_contents p span{ font-size: 0.875rem; line-height: inherit; color: #A7A7A7; }
@@ -93,13 +93,26 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
 .lb_chk.small input{ width: 13px; height: 13px; }
 .lb_chk.large input{ width: 24px; height: 24px; margin-right: 12px;}
 
+/* --- tb */
+.tb_form{  border-top: 2px solid #565656; }
+.tb_form tr{  border-bottom: 1px solid #CFCFCF; }
+.tb_form tr > *{ height: 70px;}
+.tb_form th{ background: rgba(1, 43, 131, 0.04); text-align: left;}
+.tb_form td{ padding: 10px 12px;}
+.tb_form td *:is(input, select){ height: 50px;}
+.tb_form td > *:is(input, select, textarea){ width: 100%;}
+.tb_form td textarea{ padding: 14px; line-height: 150%;}
+
+.tb_form .wrap_td{ display: flex; flex-flow: row wrap; align-items: center; }
+.tb_form .wrap_phone i{  height: 2px; background: #949494;}
+
 /**************************************************/
 /* ================================= responsive */
 @media screen and (max-width: 1920px){}
 @media screen and (min-width: 1025px){
     /* === header === */
     header .maxWidth{ height: 80px;}
-    header .link_index img{ width: 124px; }
+    header .link_index img{ width: 102px; }
     
     /* --- wrap_panel */
     header .wrap_panel{  flex: 1; display: flex; align-items: center; }
@@ -116,10 +129,11 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
 
     /* lnb */
     header .lnb{ 
-        position: absolute; top: 58px; left: 0; width: 100%; 
+        position: absolute; top: 58px; left: calc(50% - 80px);
+        width: 160px; 
         box-shadow: 0 3px 5px 3px rgba(0,0,0,.05);
         border: 1px solid #E8E8E8; border-bottom: none;
-        visibility: collapse; opacity: 0;
+        visibility: collapse; opacity: 0; 
         transition: all 0.15s ease-out;
         -webkit-transition:all 0.15s ease-out;
         -moz-transition:all 0.15s ease-out;
@@ -161,6 +175,16 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     main .bn{ height: 300px; margin-bottom: 30px;}
     main .bn b{ font-size: 42px; line-height: 42px;}
     main .bn span{ font-size: 22px;}
+
+    /* --- tb */
+    .tb_form  th{ width: 152px; padding-left: 36px;}
+    .tb_form  td > select{ max-width: 290px;}
+    .tb_form td textarea{ height: 190px;}
+
+    .tb_form .wrap_phone{ gap: 0 10px;}
+    .tb_form .wrap_td *[id*="input_phone"], .tb_form .wrap_td *[id*="input_email"]{ width: calc(33.33% - 20.66px);}
+    .tb_form .wrap_phone i{ width: 11px; }
+
 }
 @media screen and (max-width: 1440px){
     footer .link_index{ width: 180px;}
@@ -232,7 +256,7 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     header .gnb li *{ border-bottom: 1px solid rgba(255, 255, 255, 0.2);  }
     header .gnb li > *:is(p, a){ height: 56px; padding-left: 20px; font-size: 15px;}
     header .gnb li > *:is(p, a):hover, 
-    header .gnb li.active > *:is(p, a){ background: #fff; color: var(--primary); }
+    header .gnb li.active > *:is(p, a){ background: #fff; color: var(--primary); cursor: pointer; }
 
     /* lnb */
     header .lnb{ display: none; }
@@ -283,9 +307,23 @@ main .bn span{ margin-top: 16px; padding-top: 10px; border-top: 2px solid #fff;}
     main .bn{ height: 200px; margin-bottom: 32px;}
     main .bn b{ font-size: 28px; line-height: 28px;}
     main .bn span{ font-size: 16px;}
+
+    /* --- tb */
+    .tb_form th{ width: 110px; padding-left: 15px;}
+    .tb_form td textarea{ height: 220px;}
+
+    .tb_form .wrap_phone{ gap: 10px 5px;}
+    .tb_form .wrap_td *[id*="input_phone"], .tb_form .wrap_td *[id*="input_email"]{ width: calc(33.33% - 10.66px);}
+    .tb_form .wrap_phone i{ width: 6px; }
 }
 @media screen and (max-width: 560px){
     /* === header === */
     /* --- wrap_panel */
     header .wrap_panel{ right: -220px; width: 220px;}
+
+    /* === main === */
+    /* --- tb */
+    .tb_form .wrap_td *[id*="input_phone"], .tb_form .wrap_td *[id*="input_email"]{ flex: 1 1 80px; width: unset; } 
+
+
 }
